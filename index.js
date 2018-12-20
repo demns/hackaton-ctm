@@ -41,7 +41,8 @@ function preload() {
     this.load.image('house4', 'assets/house4.png');
 
     this.load.image('star', 'assets/star.png');
-    this.load.image('santa', 'assets/santa.png');
+    // this.load.image('santa', 'assets/santa.png');
+    this.load.spritesheet('santa', 'assets/santa3.png', { frameWidth: 102, frameHeight: 50 });
     this.load.spritesheet('deer', 'assets/deer2.png', { frameWidth: 32, frameHeight: 32 });
 }
 
@@ -78,6 +79,13 @@ function create() {
     this.anims.create({
         key: 'run',
         frames: this.anims.generateFrameNumbers('deer', { start: 0, end: 4 }),
+        frameRate: 10,
+        repeat: -1
+    });
+
+    this.anims.create({
+        key: 'go',
+        frames: this.anims.generateFrameNumbers('santa', { start: 0, end: 4 }),
         frameRate: 10,
         repeat: -1
     });
@@ -135,6 +143,7 @@ function update() {
     }
 
     deer.anims.play('run', true);
+    player.anims.play('go', true);
 }
 
 function gameOver() {
