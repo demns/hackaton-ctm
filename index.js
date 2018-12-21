@@ -31,6 +31,7 @@ var groundPerTimeMovement = 4;
 var fuelText, distanceText, maxDistance;
 var deer;
 var currentDeer;
+var music;
 
 function preload() {
     this.load.image('sky', 'assets/starry-night.jpg');
@@ -44,6 +45,7 @@ function preload() {
     // this.load.image('santa', 'assets/santa.png');
     this.load.spritesheet('santa', 'assets/santa3.png', { frameWidth: 102, frameHeight: 50 });
     this.load.spritesheet('deer', 'assets/deer2.png', { frameWidth: 32, frameHeight: 32 });
+    this.load.audio('boden', 'assets/santa.mp3');
 }
 
 function create() {
@@ -89,6 +91,10 @@ function create() {
         frameRate: 10,
         repeat: -1
     });
+
+    music = this.sound.add('boden');
+
+    music.play();
 }
 
 function update() {
