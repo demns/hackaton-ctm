@@ -92,9 +92,11 @@ function create() {
         repeat: -1
     });
 
-    music = this.sound.add('boden');
+    if(window.location.href.indexOf("music") > -1) {
+        music = this.sound.add('boden');
 
-    music.play();
+        music.play();
+    }
 }
 
 function update() {
